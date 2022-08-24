@@ -3,7 +3,7 @@
     <h2 align="center">Airnauts Next.js Template</h2>
 </p>
 
-## ⚙️ Usage
+### ⚙️ Usage
 
 ```
 pnpm create next-app --example https://github.com/Airnauts/nextjs-template <YOUR_APP_NAME>
