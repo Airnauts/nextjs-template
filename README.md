@@ -6,5 +6,5 @@
 ## ⚙️ Usage
 
 ```
-npx create-next-app --example https://github.com/Airnauts/nextjs-template <YOUR_APP_NAME>
+pnpm create next-app --example https://github.com/Airnauts/nextjs-template <YOUR_APP_NAME>
 ```
