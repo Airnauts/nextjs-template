@@ -27,13 +27,13 @@ module.exports = (plop) => {
 
       switch (data.type) {
         case "atom":
-          path = "../src/components/atoms";
+          path = "../src/components/atoms/";
           break;
         case "molecule":
-          path = "../src/components/molecules";
+          path = "../src/components/molecules/";
           break;
         case "organism":
-          path = "../src/components/organisms";
+          path = "../src/components/organisms/";
           break;
         case "module":
           path = "../src/components/layouts/";
@@ -43,6 +43,9 @@ module.exports = (plop) => {
           break;
         case "util":
           path = "../src/components/utils/";
+          break;
+        case "layout":
+          path = "../src/components/layouts/";
           break;
         case "module":
           path = "../src/modules/";
