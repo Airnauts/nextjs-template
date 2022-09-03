@@ -8,3 +8,10 @@
 ```
 pnpm create next-app --example https://github.com/Airnauts/nextjs-template <YOUR_APP_NAME>
 ```
+
+### 🪄 Scripts
+
+```
+// Create new component
+pnpm new-c
+```
