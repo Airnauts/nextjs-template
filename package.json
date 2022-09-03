@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "new-c": "plop component --plopfile ./scripts/plopfile.js"
+    "new-c": "plop component --plopfile ./plop/plopfile.js"
   },
   "dependencies": {
     "next": "latest",
