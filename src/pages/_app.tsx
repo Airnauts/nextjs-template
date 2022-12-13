@@ -1,13 +1,13 @@
-import "styles/globals.css";
+import 'styles/globals.css';
 
-import { ArLayout } from "components/layouts/ArLayout";
+import { ArLayout } from 'components/layouts/ArLayout';
 
-function MyApp({ Component, pageProps }) {
+const MyApp = function MyApp({ Component, pageProps }) {
   return (
     <ArLayout>
-        <Component {...pageProps} />
+      <Component {...pageProps} />
     </ArLayout>
   );
-}
+};
 
 export default MyApp;

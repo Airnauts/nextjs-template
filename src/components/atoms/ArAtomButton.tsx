@@ -1,5 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-export const ArAtomButton: React.FC<{}> = () => (
-    <button>Say Hello!</button>
-)
+export const ArAtomButton = function ArAtomButton() {
+  return <button type="button">Say Hello!</button>;
+};

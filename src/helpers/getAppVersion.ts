@@ -1,5 +1,5 @@
-import { APP_VERSION } from "config/constants"
+import { APP_VERSION } from 'config/constants';
 
-export const getAppVersion = () => {
-    return APP_VERSION
-}
+export const getAppVersion = function getAppVersion() {
+  return APP_VERSION;
+};
