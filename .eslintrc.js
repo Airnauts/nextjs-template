@@ -12,9 +12,9 @@ module.exports = {
     project,
   },
   parserOptions: {
-    ecmaVersion: "latest"
+    ecmaVersion: 'latest',
   },
   env: {
-    es6: true
-  }
+    es6: true,
+  },
 };

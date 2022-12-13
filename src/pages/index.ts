@@ -1,3 +1,3 @@
-import {ArHomeTemplate} from 'components/templates/ArHomeTemplate'
+import { ArHomeTemplate } from 'components/templates/ArHomeTemplate';
 
-export default ArHomeTemplate
+export default ArHomeTemplate;

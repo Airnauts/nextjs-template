@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
-export const ArAuthGate: React.FC<React.PropsWithChildren<{}>> = ({children}) => (
-    <>
-    {children}
-    </>
-)
+export const ArAuthGate = function ArAuthGate({ children }) {
+  return <>{children}</>;
+};

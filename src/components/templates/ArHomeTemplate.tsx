@@ -1,6 +1,6 @@
-import { ArWelcomeMolecule } from 'components/molecules/ArWelcomeMolecule'
-import React from 'react'
+import { ArWelcomeMolecule } from 'components/molecules/ArWelcomeMolecule';
+import React from 'react';
 
-export const ArHomeTemplate: React.FC<{}> =  () => (
-    <ArWelcomeMolecule />
-)
+export const ArHomeTemplate = function ArHomeTemplate() {
+  return <ArWelcomeMolecule />;
+};
