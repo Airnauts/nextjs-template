@@ -4,6 +4,10 @@
 </p>
 
 ### ⚙️ Usage
+There are two methods to use this template in your project:
+
+- Click "Use this template" in GitHub repository page
+- Use this pnpm command:
 
 ```
 pnpm create next-app --example https://github.com/Airnauts/nextjs-template <YOUR_APP_NAME>
