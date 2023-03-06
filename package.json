@@ -4,6 +4,7 @@
     "start": "next start",
     "build": "next build",
     "dev": "APP_ENV=development next dev",
+    "preview": "npm run build && npm run start",
     "build:development": "APP_ENV=development next build",
     "start:development": "APP_ENV=development next start",
     "preview:development": "npm run build:development && npm run start:development",
