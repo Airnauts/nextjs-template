@@ -23,6 +23,9 @@ dev
 # Build production app
 build
 
+# Preview app (build and start)
+preview
+
 # Build, Start and Preview development app
 build:development
 start:development
