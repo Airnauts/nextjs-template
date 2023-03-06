@@ -1,11 +1,22 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next",
-    "build": "next build",
     "start": "next start",
+    "build": "next build",
+    "dev": "APP_ENV=development next dev",
+    "build:development": "APP_ENV=development next build",
+    "start:development": "APP_ENV=development next start",
+    "preview:development": "npm run build:development && npm run start:development",
+    "dev:staging": "APP_ENV=staging next dev",
+    "build:staging": "APP_ENV=staging next build",
+    "start:staging": "APP_ENV=staging next start",
+    "preview:staging": "npm run build:staging && npm run start:staging",
+    "dev:production": "APP_ENV=production next dev",
+    "build:production": "APP_ENV=production next build",
+    "start:production": "APP_ENV=production next start",
+    "preview:production": "npm run build:production && npm run start:production",
     "type-check": "tsc",
-    "new-c": "plop component --plopfile ./plop/plopfile.js"
+    "component": "plop component --plopfile ./plop/plopfile.js"
   },
   "prettier": "@airnauts/style-guide/prettier",
   "dependencies": {

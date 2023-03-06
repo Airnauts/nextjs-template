@@ -4,6 +4,7 @@
 </p>
 
 ### ⚙️ Usage
+
 There are two methods to use this template in your project:
 
 - Click "Use this template" in GitHub repository page
@@ -15,7 +16,30 @@ pnpm create next-app --example https://github.com/Airnauts/nextjs-template <YOUR
 
 ### 🪄 Scripts
 
-```
-// Create new component
-pnpm new-c
+```sh
+# Start developing 🎉
+dev
+
+# Build production app
+build
+
+# Build, Start and Preview development app
+build:development
+start:development
+preview:development
+
+# Develop, Build, Start and Preview staging app
+dev:staging
+build:staging
+start:staging
+preview:staging
+
+# Develop, Build, Start and Preview production app
+dev:production
+build:production
+start:production
+preview:production
+
+# Create new component
+pnpm component
 ```
