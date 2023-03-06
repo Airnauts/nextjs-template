@@ -33,8 +33,5 @@ module.exports = function getAppEnvs() {
 
   console.log('\x1b[33m%s\x1b[0m', '⚙️ Using env file:', envFilePath);
 
-  return {
-    filePath: envFilePath,
-    envs: envsObject,
-  };
+  return envsObject;
 };

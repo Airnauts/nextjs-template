@@ -1,6 +1,6 @@
 const getAppEnvs = require('./scripts/getAppEnvs');
 
-const { envs } = getAppEnvs();
+const envs = getAppEnvs();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
