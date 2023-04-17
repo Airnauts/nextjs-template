@@ -16,9 +16,35 @@ pnpm create next-app --example https://github.com/Airnauts/nextjs-template <YOUR
 
 ### 🪄 Scripts
 
-```
-// Create new component
-pnpm new-c
+```sh
+# Start developing 🎉
+dev
+
+# Build production app
+build
+
+# Preview app (build and start)
+preview
+
+# Build, Start and Preview development app
+build:development
+start:development
+preview:development
+
+# Develop, Build, Start and Preview staging app
+dev:staging
+build:staging
+start:staging
+preview:staging
+
+# Develop, Build, Start and Preview production app
+dev:production
+build:production
+start:production
+preview:production
+
+# Create new component
+pnpm component
 ```
 
 ### 🤓 VSCode

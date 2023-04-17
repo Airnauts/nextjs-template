@@ -1,13 +1,26 @@
 {
   "private": true,
   "scripts": {
+    "start": "next start",
+    "build": "next build",
+    "dev": "APP_ENV=development next dev",
+    "preview": "npm run build && npm run start",
+    "build:development": "APP_ENV=development next build",
+    "start:development": "APP_ENV=development next start",
+    "preview:development": "npm run build:development && npm run start:development",
+    "dev:staging": "APP_ENV=staging next dev",
+    "build:staging": "APP_ENV=staging next build",
+    "start:staging": "APP_ENV=staging next start",
+    "preview:staging": "npm run build:staging && npm run start:staging",
+    "dev:production": "APP_ENV=production next dev",
+    "build:production": "APP_ENV=production next build",
+    "start:production": "APP_ENV=production next start",
+    "preview:production": "npm run build:production && npm run start:production",
+    "component": "plop component --plopfile ./plop/plopfile.js",
     "storybook": "start-storybook -p 6006",
     "prepare": "husky install",
-    "dev": "next",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
     "type-check": "tsc --pretty --noEmit",
-    "build": "next build",
-    "start": "next start",
     "new-c": "plop component --plopfile ./plop/plopfile.js",
     "pre-commit": "lint-staged"
   },
@@ -20,7 +33,7 @@
     "typescript": "^4.9.4"
   },
   "devDependencies": {
-    "@airnauts/style-guide": "^1.5.1",
+    "@airnauts/style-guide": "^1.6.1",
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@storybook/addon-actions": "^6.5.16",

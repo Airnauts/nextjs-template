@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const ArAuthGate = function ArAuthGate({ children }) {
+export function ArAuthGate({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
-};
+}

@@ -2,7 +2,7 @@ import AirnautsLogo from 'assets/images/logo.png';
 import Image from 'next/image';
 import React from 'react';
 
-export const ArLayout = function ArLayout({ children }) {
+export function ArLayout({ children }: { children: React.ReactNode }) {
   return (
     <div style={{ textAlign: 'center' }}>
       <Image
@@ -12,4 +12,4 @@ export const ArLayout = function ArLayout({ children }) {
       {children}
     </div>
   );
-};
+}
