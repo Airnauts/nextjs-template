@@ -47,6 +47,16 @@ preview:production
 pnpm component
 ```
 
+### 🌎 Environment Variables
+
+**./env/.env.[...]** - Environment variables stored in the `env` folder are public and can be pushed to the repository.
+
+**./.env.[...]** - Environment variables for local development. They are private and should not be pushed to the repository.
+
+### 📝 Commit Message
+
+We use <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> to standardize commit messages.
+
 ### 🤓 VSCode
 
 You can add the <a href="https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits">Conventional Commits</a> plugin to your VSCode and make life easier!
