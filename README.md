@@ -46,3 +46,7 @@ preview:production
 # Create new component
 pnpm component
 ```
+
+### 🤓 VSCode
+
+You can add the <a href="https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits">Conventional Commits</a> plugin to your VSCode and make life easier!
