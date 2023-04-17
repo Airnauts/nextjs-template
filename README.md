@@ -4,6 +4,7 @@
 </p>
 
 ### ⚙️ Usage
+
 There are two methods to use this template in your project:
 
 - Click "Use this template" in GitHub repository page
@@ -19,3 +20,7 @@ pnpm create next-app --example https://github.com/Airnauts/nextjs-template <YOUR
 // Create new component
 pnpm new-c
 ```
+
+### 🤓 VSCode
+
+You can add the <a href="https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits">Conventional Commits</a> plugin to your VSCode and make life easier!
