@@ -1,12 +1,12 @@
 import { ArAtomButton } from 'components/atoms/ArAtomButton';
 import React from 'react';
-import { getAppVersion } from 'helpers/getAppVersion';
+import { getAppSiteName } from 'helpers/getAppSiteName';
 
-export const ArWelcomeMolecule = function ArWelcomeMolecule() {
+export function ArWelcomeMolecule() {
   return (
     <div style={{ textAlign: 'center' }}>
-      <h1>Airnauts Next.js Template {getAppVersion()}</h1>
+      <h1>{getAppSiteName()}</h1>
       <ArAtomButton />
     </div>
   );
-};
+}

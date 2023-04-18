@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const ArAtomButton = function ArAtomButton() {
+export function ArAtomButton() {
   return <button type="button">Say Hello!</button>;
-};
+}
