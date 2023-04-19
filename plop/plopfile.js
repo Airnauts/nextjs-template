@@ -1,74 +1,80 @@
 module.exports = (plop) => {
-  plop.setGenerator("component", {
-    description: "Create a component",
+  plop.setGenerator('component', {
+    description: 'Create a component',
     prompts: [
       {
-        type: "input",
-        name: "name",
-        message: "What is your component name?",
+        type: 'input',
+        name: 'name',
+        message: 'What is your component name?',
       },
       {
-        type: "list",
-        name: "type",
-        message: "Select type of the component",
-        choices: [
-          "atom",
-          "molecule",
-          "organism",
-          "module",
-          "template",
-          "util",
-          "module",
-        ],
+        type: 'list',
+        name: 'type',
+        message: 'Select type of the component',
+        choices: ['atom', 'molecule', 'organism', 'module', 'template', 'util', 'module'],
+      },
+      {
+        type: 'confirm',
+        name: 'storybook',
+        message: 'Should this component have storybook?',
       },
     ],
     actions: (data) => {
-      let path = "";
+      let path = '';
 
       switch (data.type) {
-        case "atom":
-          path = "../src/components/atoms/";
+        case 'atom':
+          path = '../src/components/atoms/';
           break;
-        case "molecule":
-          path = "../src/components/molecules/";
+        case 'molecule':
+          path = '../src/components/molecules/';
           break;
-        case "organism":
-          path = "../src/components/organisms/";
+        case 'organism':
+          path = '../src/components/organisms/';
           break;
-        case "module":
-          path = "../src/components/layouts/";
+        case 'module':
+          path = '../src/components/layouts/';
           break;
-        case "template":
-          path = "../src/components/templates/";
+        case 'template':
+          path = '../src/components/templates/';
           break;
-        case "util":
-          path = "../src/components/utils/";
+        case 'util':
+          path = '../src/components/utils/';
           break;
-        case "layout":
-          path = "../src/components/layouts/";
+        case 'layout':
+          path = '../src/components/layouts/';
           break;
-        case "module":
-          path = "../src/modules/";
+        case 'module':
+          path = '../src/modules/';
           break;
       }
 
       let actions = [
         {
-          type: "add",
-          path: path + "{{pascalCase name}}/{{pascalCase name}}.tsx",
-          templateFile: "./component/component.tsx.hbs",
+          type: 'add',
+          path: path + '{{pascalCase name}}/{{pascalCase name}}.tsx',
+          templateFile: './component/component.tsx.hbs',
         },
         {
-          type: "add",
-          path: path + "{{pascalCase name}}/index.ts",
-          templateFile: "./component/index.ts.hbs",
+          type: 'add',
+          path: path + '{{pascalCase name}}/index.ts',
+          templateFile: './component/index.ts.hbs',
         },
         {
-          type: "add",
-          path: path + "{{pascalCase name}}/{{pascalCase name}}.types.ts",
-          templateFile: "./component/types.ts.hbs",
+          type: 'add',
+          path: path + '{{pascalCase name}}/{{pascalCase name}}.types.ts',
+          templateFile: './component/types.ts.hbs',
         },
       ];
+
+      if (data.storybook) {
+        actions.push({
+          type: 'add',
+          path: path + '{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
+          templateFile: './component/stories.tsx.hbs',
+        });
+      }
+
       return actions;
     },
   });
