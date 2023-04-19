@@ -50,6 +50,8 @@ export function ArMeta(props: ArMetaProps) {
 
       <NextSeo
         {...rest}
+        noindex={process.env.APP_ENV !== 'production'}
+        nofollow={process.env.APP_ENV !== 'production'}
         title={title}
         titleTemplate={`%s | ${APP_CONFIG.site_name}`}
         description={description}
