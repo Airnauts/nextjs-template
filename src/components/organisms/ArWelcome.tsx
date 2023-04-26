@@ -1,6 +1,6 @@
 import { ArWelcomeMolecule } from 'components/molecules/ArWelcomeMolecule';
 import React from 'react';
 
-export const ArWelcome = function ArWelcome() {
+export function ArWelcome() {
   return <ArWelcomeMolecule />;
-};
+}

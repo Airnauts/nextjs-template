@@ -13,6 +13,12 @@ module.exports = (plop) => {
         message: 'Select type of the component',
         choices: ['atom', 'molecule', 'organism', 'module', 'template', 'util', 'module', 'context'],
       },
+      {
+        type: 'confirm',
+        name: 'storybook',
+        message: 'Should this component have storybook?',
+        when: (answers) => answers.type !== 'context',
+      },
     ],
     actions: (data) => {
       let path = '';
@@ -77,6 +83,15 @@ module.exports = (plop) => {
           type: 'add',
           path: path + '{{pascalCase name}}/{{pascalCase name}}.hooks.tsx',
           templateFile: `./${templatePath}/hooks.ts.hbs`,
+          templateFile: './component/types.ts.hbs',
+        });
+      }
+
+      if (data.storybook) {
+        actions.push({
+          type: 'add',
+          path: path + '{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
+          templateFile: './component/stories.tsx.hbs',
         });
       }
 
