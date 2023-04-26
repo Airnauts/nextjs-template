@@ -66,6 +66,20 @@ module.exports = (plop) => {
           templateFile: `./${templatePath}/types.ts.hbs`,
         },
       ];
+
+      if (data.type === 'context') {
+        actions.push({
+          type: 'add',
+          path: path + '{{pascalCase name}}/{{pascalCase name}}.reducer.tsx',
+          templateFile: `./${templatePath}/reducer.ts.hbs`,
+        });
+        actions.push({
+          type: 'add',
+          path: path + '{{pascalCase name}}/{{pascalCase name}}.hooks.tsx',
+          templateFile: `./${templatePath}/hooks.ts.hbs`,
+        });
+      }
+
       return actions;
     },
   });
