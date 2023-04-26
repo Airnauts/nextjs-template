@@ -1,0 +1,19 @@
+import { Reducer } from 'react';
+import { {{pascalCase name}}ReducerAction, {{pascalCase name}}StateType } from './{{pascalCase name}}.types';
+
+type State = {{pascalCase name}}StateType;
+
+export const {{camelCase name}}InitialState: State = {
+  count: 0,
+};
+
+export const {{camelCase name}}Reducer: Reducer<State, {{pascalCase name}}ReducerAction> = (state, action) => {
+  switch (action) {
+    case {{pascalCase name}}ReducerAction.increment:
+      return { count: state.count + 1 };
+    case {{pascalCase name}}ReducerAction.decrement:
+      return { count: state.count - 1 };
+    default:
+      throw new Error();
+  }
+};

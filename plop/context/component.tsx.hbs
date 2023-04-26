@@ -1,39 +1,48 @@
-import { createContext, useCallback, useContext, useMemo, useState } from 'react';
-import { {{pascalCase name}}ProviderProps, {{pascalCase name}}Type } from './{{pascalCase name}}.types';
+import { createContext, useCallback, useMemo, useReducer } from 'react';
+import {
+  {{pascalCase name}}ReducerAction,
+  {{pascalCase name}}ActionsType,
+  {{pascalCase name}}ProviderProps,
+  {{pascalCase name}}StateType,
+} from './{{pascalCase name}}.types';
+import { {{camelCase name}}InitialState, {{camelCase name}}Reducer } from './{{pascalCase name}}.reducer';
 
-const {{pascalCase name}} = createContext<{{pascalCase name}}Type>({
-  value: 0,
-  increment: () => {},
-  decrement: () => {},
-});
+/**
+ *
+ * Local Types used to make the code more readable
+ */
 
+type State = {{pascalCase name}}StateType;
+type Actions = {{pascalCase name}}ActionsType;
+type Reducer = (state: State, action: {{pascalCase name}}ReducerAction) => State;
+
+/**
+ *
+ * Separated into two contexts to avoid unnecessary re-renders
+ * when only one of the contexts changes.
+ *
+ * See: https://kentcdodds.com/blog/how-to-optimize-your-context-value
+ */
+
+export const {{pascalCase name}}State = createContext<State>({} as State);
+export const {{pascalCase name}}Actions = createContext<Actions>({} as Actions);
+
+/**
+ *
+ *  This is the main component that will be used to wrap the app.
+ */
 export function {{pascalCase name}}Provider({ children }: {{pascalCase name}}ProviderProps) {
-  const [value, setValue] = useState(0);
+  const [state, dispatch] = useReducer<Reducer>({{camelCase name}}Reducer, {{camelCase name}}InitialState);
 
-  const increment = useCallback(() => {
-    setValue(value + 1);
-  }, [value]);
+  const doSomethingCool = useCallback(() => {
+    console.log('doSomethingCool');
+  }, []);
 
-  const decrement = useCallback(() => {
-    setValue(value - 1);
-  }, [value]);
+  const actionsProviderValue = useMemo<Actions>(() => ({ dispatch, doSomethingCool }), [dispatch, doSomethingCool]);
 
-  const contextValue = useMemo<{{pascalCase name}}Type>(
-    () => ({
-      value,
-      increment,
-      decrement,
-    }),
-    [decrement, increment, value],
+  return (
+    <{{pascalCase name}}Actions.Provider value={actionsProviderValue}>
+      <{{pascalCase name}}State.Provider value={state}>{children}</{{pascalCase name}}State.Provider>
+    </{{pascalCase name}}Actions.Provider>
   );
-
-  return <{{pascalCase name}}.Provider value={contextValue}>{children}</{{pascalCase name}}.Provider>;
-}
-
-export function use{{pascalCase name}}() {
-  const context = useContext({{pascalCase name}});
-  if (context === undefined) {
-    throw new Error('use{{pascalCase name}} must be used within a {{pascalCase name}}Provider');
-  }
-  return context;
 }
