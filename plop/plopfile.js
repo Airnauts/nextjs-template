@@ -49,7 +49,7 @@ module.exports = (plop) => {
         type: 'list',
         name: 'type',
         message: 'Select type of the component',
-        choices: ['atom', 'molecule', 'organism', 'module', 'template', 'util', 'module'],
+        choices: ['atom', 'molecule', 'organism', 'module', 'template', 'util', 'layout'],
       },
       {
         type: 'confirm',
