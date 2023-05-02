@@ -72,7 +72,7 @@ module.exports = (plop) => {
           path = '../src/components/organisms/';
           break;
         case 'module':
-          path = '../src/components/layouts/';
+          path = '../src/components/modules/';
           break;
         case 'template':
           path = '../src/components/templates/';
@@ -83,8 +83,8 @@ module.exports = (plop) => {
         case 'layout':
           path = '../src/components/layouts/';
           break;
-        case 'module':
-          path = '../src/modules/';
+        default:
+          path = '../src/components/';
           break;
       }
 
