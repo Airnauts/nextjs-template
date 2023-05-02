@@ -52,11 +52,6 @@ module.exports = (plop) => {
       let actions = [
         {
           type: 'add',
-          path: path + '{{pascalCase name}}/{{pascalCase name}}.tsx',
-          templateFile: `./${templatePath}/component.tsx.hbs`,
-        },
-        {
-          type: 'add',
           path: path + '{{pascalCase name}}/index.ts',
           templateFile: `./${templatePath}/index.ts.hbs`,
         },
@@ -70,13 +65,24 @@ module.exports = (plop) => {
       if (data.type === 'context') {
         actions.push({
           type: 'add',
+          path: path + '{{pascalCase name}}/{{pascalCase name}}.context.tsx',
+          templateFile: `./${templatePath}/context.tsx.hbs`,
+        });
+        actions.push({
+          type: 'add',
           path: path + '{{pascalCase name}}/{{pascalCase name}}.reducer.tsx',
-          templateFile: `./${templatePath}/reducer.ts.hbs`,
+          templateFile: `./${templatePath}/reducer.tsx.hbs`,
         });
         actions.push({
           type: 'add',
           path: path + '{{pascalCase name}}/{{pascalCase name}}.hooks.tsx',
-          templateFile: `./${templatePath}/hooks.ts.hbs`,
+          templateFile: `./${templatePath}/hooks.tsx.hbs`,
+        });
+      } else {
+        actions.push({
+          type: 'add',
+          path: path + '{{pascalCase name}}/{{pascalCase name}}.tsx',
+          templateFile: `./${templatePath}/component.tsx.hbs`,
         });
       }
 

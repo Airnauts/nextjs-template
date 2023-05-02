@@ -1,15 +1,13 @@
-export type {{pascalCase name}}ProviderProps = React.PropsWithChildren<{}>;
+import { ArContextAction, ArContextActionWithPayload } from 'types';
 
 export type {{pascalCase name}}StateType = {
   count: number;
 };
 
-export enum {{pascalCase name}}ReducerAction {
-  increment = 'increment',
-  decrement = 'decrement',
-}
-
 export type {{pascalCase name}}ActionsType = {
-  dispatch: React.Dispatch<{{pascalCase name}}ReducerAction>;
-  doSomethingCool: () => void;
+  increment: () => void;
+  set: (count: number) => void;
+  customAction: (payload: number) => void;
 };
+
+export type {{pascalCase name}}Action = ArContextAction<'increment'> | ArContextActionWithPayload<'set', number>;

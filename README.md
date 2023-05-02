@@ -57,6 +57,10 @@ pnpm component
 
 We use <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> to standardize commit messages.
 
+### Context
+
+**TODO**
+
 ### 🤓 VSCode
 
 You can add the <a href="https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits">Conventional Commits</a> plugin to your VSCode and make life easier!
