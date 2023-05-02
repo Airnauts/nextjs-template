@@ -1,4 +1,42 @@
 module.exports = (plop) => {
+  plop.setGenerator('context', {
+    description: 'Create a context',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is your component name?',
+      },
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: '../src/contexts/{{pascalCase name}}/index.ts',
+        templateFile: './context/index.ts.hbs',
+      },
+      {
+        type: 'add',
+        path: '../src/contexts/{{pascalCase name}}/{{pascalCase name}}.types.tsx',
+        templateFile: './context/types.ts.hbs',
+      },
+      {
+        type: 'add',
+        path: '../src/contexts/{{pascalCase name}}/{{pascalCase name}}.context.tsx',
+        templateFile: './context/context.tsx.hbs',
+      },
+      {
+        type: 'add',
+        path: '../src/contexts/{{pascalCase name}}/{{pascalCase name}}.reducer.tsx',
+        templateFile: './context/reducer.tsx.hbs',
+      },
+      {
+        type: 'add',
+        path: '../src/contexts/{{pascalCase name}}/{{pascalCase name}}.hooks.tsx',
+        templateFile: './context/hooks.tsx.hbs',
+      },
+    ],
+  });
+
   plop.setGenerator('component', {
     description: 'Create a component',
     prompts: [
@@ -11,7 +49,13 @@ module.exports = (plop) => {
         type: 'list',
         name: 'type',
         message: 'Select type of the component',
-        choices: ['atom', 'molecule', 'organism', 'module', 'template', 'util', 'module', 'context'],
+        choices: ['atom', 'molecule', 'organism', 'module', 'template', 'util', 'module'],
+      },
+      {
+        type: 'confirm',
+        name: 'storybook',
+        message: 'Do you want to add storybook?',
+        default: false,
       },
     ],
     actions: (data) => {
@@ -52,6 +96,11 @@ module.exports = (plop) => {
       let actions = [
         {
           type: 'add',
+          path: path + '{{pascalCase name}}/{{pascalCase name}}.tsx',
+          templateFile: `./${templatePath}/component.tsx.hbs`,
+        },
+        {
+          type: 'add',
           path: path + '{{pascalCase name}}/index.ts',
           templateFile: `./${templatePath}/index.ts.hbs`,
         },
@@ -62,28 +111,7 @@ module.exports = (plop) => {
         },
       ];
 
-      if (data.type === 'context') {
-        actions.push({
-          type: 'add',
-          path: path + '{{pascalCase name}}/{{pascalCase name}}.context.tsx',
-          templateFile: `./${templatePath}/context.tsx.hbs`,
-        });
-        actions.push({
-          type: 'add',
-          path: path + '{{pascalCase name}}/{{pascalCase name}}.reducer.tsx',
-          templateFile: `./${templatePath}/reducer.tsx.hbs`,
-        });
-        actions.push({
-          type: 'add',
-          path: path + '{{pascalCase name}}/{{pascalCase name}}.hooks.tsx',
-          templateFile: `./${templatePath}/hooks.tsx.hbs`,
-        });
-      } else {
-        actions.push({
-          type: 'add',
-          path: path + '{{pascalCase name}}/{{pascalCase name}}.tsx',
-          templateFile: `./${templatePath}/component.tsx.hbs`,
-        });
+      if (data.storybook) {
         actions.push({
           type: 'add',
           path: path + '{{pascalCase name}}/{{pascalCase name}}.stories.tsx',

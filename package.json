@@ -20,12 +20,12 @@
     "preview:production": "npm run build:production && npm run start:production",
     "analyze:production": "cross-env ANALYZE=true npm run build:production",
     "component": "plop component --plopfile ./plop/plopfile.js",
+    "context": "plop context --plopfile ./plop/plopfile.js",
     "storybook": "start-storybook -p 6006",
     "postbuild": "next-sitemap",
     "prepare": "husky install",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
     "type-check": "tsc --pretty --noEmit",
-    "new-c": "plop component --plopfile ./plop/plopfile.js",
     "pre-commit": "lint-staged"
   },
   "prettier": "@airnauts/style-guide/prettier",
