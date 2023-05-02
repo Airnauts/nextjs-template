@@ -11,24 +11,12 @@ module.exports = (plop) => {
         type: 'list',
         name: 'type',
         message: 'Select type of the component',
-<<<<<<< HEAD
-        choices: ['atom', 'molecule', 'organism', 'module', 'template', 'util', 'module'],
-      },
-      {
-        type: 'confirm',
-        name: 'storybook',
-        message: 'Should this component have storybook?',
-=======
         choices: ['atom', 'molecule', 'organism', 'module', 'template', 'util', 'module', 'context'],
->>>>>>> master
       },
     ],
     actions: (data) => {
       let path = '';
-<<<<<<< HEAD
-=======
       let templatePath = 'component';
->>>>>>> master
 
       switch (data.type) {
         case 'atom':
@@ -54,13 +42,10 @@ module.exports = (plop) => {
           break;
         case 'module':
           path = '../src/modules/';
-<<<<<<< HEAD
-=======
           break;
         case 'context':
           path = '../src/contexts/';
           templatePath = 'context';
->>>>>>> master
           break;
       }
 
@@ -68,29 +53,17 @@ module.exports = (plop) => {
         {
           type: 'add',
           path: path + '{{pascalCase name}}/{{pascalCase name}}.tsx',
-<<<<<<< HEAD
-          templateFile: './component/component.tsx.hbs',
-=======
           templateFile: `./${templatePath}/component.tsx.hbs`,
->>>>>>> master
         },
         {
           type: 'add',
           path: path + '{{pascalCase name}}/index.ts',
-<<<<<<< HEAD
-          templateFile: './component/index.ts.hbs',
-=======
           templateFile: `./${templatePath}/index.ts.hbs`,
->>>>>>> master
         },
         {
           type: 'add',
           path: path + '{{pascalCase name}}/{{pascalCase name}}.types.ts',
-<<<<<<< HEAD
-          templateFile: './component/types.ts.hbs',
-=======
           templateFile: `./${templatePath}/types.ts.hbs`,
->>>>>>> master
         },
       ];
 
