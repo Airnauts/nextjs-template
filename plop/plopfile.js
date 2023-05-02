@@ -60,7 +60,6 @@ module.exports = (plop) => {
     ],
     actions: (data) => {
       let path = '';
-      let templatePath = 'component';
 
       switch (data.type) {
         case 'atom':
@@ -87,27 +86,23 @@ module.exports = (plop) => {
         case 'module':
           path = '../src/modules/';
           break;
-        case 'context':
-          path = '../src/contexts/';
-          templatePath = 'context';
-          break;
       }
 
       let actions = [
         {
           type: 'add',
           path: path + '{{pascalCase name}}/{{pascalCase name}}.tsx',
-          templateFile: `./${templatePath}/component.tsx.hbs`,
+          templateFile: `./component/component.tsx.hbs`,
         },
         {
           type: 'add',
           path: path + '{{pascalCase name}}/index.ts',
-          templateFile: `./${templatePath}/index.ts.hbs`,
+          templateFile: `./component/index.ts.hbs`,
         },
         {
           type: 'add',
           path: path + '{{pascalCase name}}/{{pascalCase name}}.types.ts',
-          templateFile: `./${templatePath}/types.ts.hbs`,
+          templateFile: `./component/types.ts.hbs`,
         },
       ];
 
