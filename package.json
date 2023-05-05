@@ -39,7 +39,7 @@
     "sharp": "^0.32.0"
   },
   "devDependencies": {
-    "@airnauts/style-guide": "^1.6.1",
+    "@airnauts/style-guide": "^1.7.0",
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@next/bundle-analyzer": "^13.3.0",
