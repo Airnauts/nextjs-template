@@ -1,6 +1,15 @@
-import { ArWelcomeMolecule } from 'components/molecules/ArWelcomeMolecule';
+import { ArWelcome } from 'components/organisms/ArWelcome';
+import { ArMeta } from 'components/utils/ArMeta';
 import React from 'react';
 
-export const ArHomeTemplate = function ArHomeTemplate() {
-  return <ArWelcomeMolecule />;
-};
+export function ArHomeTemplate() {
+  return (
+    <>
+      <ArMeta
+        title="Homepage"
+        description="Homepage description"
+      />
+      <ArWelcome />
+    </>
+  );
+}

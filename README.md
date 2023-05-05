@@ -3,6 +3,19 @@
     <h2 align="center">Airnauts Next.js Template</h2>
 </p>
 
+### 🚀 Features
+
+- typescript
+- eslint (@airnauts/style-guide)
+- prettier (@airnauts/style-guide)
+- husky
+- lint-staged
+- commitlint
+- storybook
+- next-seo
+- next-sitemap
+- bundle analyzer
+
 ### ⚙️ Usage
 
 There are two methods to use this template in your project:
@@ -26,22 +39,25 @@ build
 # Preview app (build and start)
 preview
 
-# Build, Start and Preview development app
+# Build, Start, Preview and Bundle Analyze development app
 build:development
 start:development
 preview:development
+analyze:development
 
-# Develop, Build, Start and Preview staging app
+# Develop, Build, Start, Preview and Bundle Analyze staging app
 dev:staging
 build:staging
 start:staging
 preview:staging
+analyze:staging
 
-# Develop, Build, Start and Preview production app
+# Develop, Build, Start, Preview and Bundle Analyze production app
 dev:production
 build:production
 start:production
 preview:production
+analyze:production
 
 # Create new component
 pnpm component
@@ -49,13 +65,17 @@ pnpm component
 
 ### 🌎 Environment Variables
 
-**./env/.env.[...]** - Environment variables stored in the `env` folder are public and can be pushed to the repository.
+`./env/.env.[...]` - Environment variables stored in the `env` folder are public and can be pushed to the repository.
 
-**./.env.[...]** - Environment variables for local development. They are private and should not be pushed to the repository.
+`./.env.[...]` - Environment variables for local development. They are private and should not be pushed to the repository.
 
 ### 📝 Commit Message
 
 We use <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> to standardize commit messages.
+
+### Context
+
+**TODO**
 
 ### 🤓 VSCode
 
