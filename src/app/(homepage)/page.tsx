@@ -1,15 +1,5 @@
-import { ArWelcome } from 'components/organisms/ArWelcome';
-import { Metadata } from 'next';
-import React from 'react';
+import { ArHomePage, ArHomePageMetadata } from 'components/pages/ArHomePage';
 
-export const metadata: Metadata = {
-  title: 'Homepage',
-};
+export default ArHomePage;
 
-export default function HomepagePage() {
-  return (
-    <div>
-      <ArWelcome />
-    </div>
-  );
-}
+export { ArHomePageMetadata as metadata };
