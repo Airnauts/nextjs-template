@@ -12,7 +12,6 @@
 - lint-staged
 - commitlint
 - storybook
-- next-seo
 - next-sitemap
 - bundle analyzer
 

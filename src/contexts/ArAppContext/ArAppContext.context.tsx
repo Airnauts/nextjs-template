@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, useMemo, useReducer } from 'react';
 import { ArAppContextActionsType, ArAppContextStateType } from './ArAppContext.types';
 import { arAppContextReducer } from './ArAppContext.reducer';

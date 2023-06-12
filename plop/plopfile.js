@@ -49,7 +49,7 @@ module.exports = (plop) => {
         type: 'list',
         name: 'type',
         message: 'Select type of the component',
-        choices: ['atom', 'molecule', 'organism', 'module', 'template', 'util', 'layout'],
+        choices: ['atom', 'molecule', 'organism', 'module', 'util', 'template', 'layout', 'page'],
       },
       {
         type: 'confirm',
@@ -82,6 +82,9 @@ module.exports = (plop) => {
           break;
         case 'layout':
           path = '../src/components/layouts/';
+          break;
+        case 'page':
+          path = '../src/components/pages/';
           break;
         default:
           path = '../src/components/';
