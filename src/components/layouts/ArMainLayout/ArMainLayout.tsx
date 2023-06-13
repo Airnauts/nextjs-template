@@ -3,6 +3,9 @@ import { ArAppContextProvider } from 'contexts/ArAppContext';
 import { Metadata } from 'next';
 import { ArMainLayoutProps } from './ArMainLayout.types';
 
+import 'styles/reset.css';
+import 'styles/globals.css';
+
 export const ArMainLayoutMetadata: Metadata = {
   title: {
     template: '%s | Acme',
