@@ -74,7 +74,7 @@ We use <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Com
 
 ### Context
 
-**TODO**
+<a href="src/contexts/README.md">Read info about custom "Air Context"</a>
 
 ### 🤓 VSCode
 
