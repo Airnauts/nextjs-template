@@ -5,36 +5,51 @@ module.exports = (plop) => {
       {
         type: 'input',
         name: 'name',
-        message: 'What is your component name?',
+        message: 'Context name:',
+      },
+      {
+        type: 'input',
+        name: 'module',
+        message: 'Module name (leave empty if context is common)',
       },
     ],
-    actions: [
-      {
-        type: 'add',
-        path: '../src/contexts/{{pascalCase name}}/index.ts',
-        templateFile: './context/index.ts.hbs',
-      },
-      {
-        type: 'add',
-        path: '../src/contexts/{{pascalCase name}}/{{pascalCase name}}.types.tsx',
-        templateFile: './context/types.ts.hbs',
-      },
-      {
-        type: 'add',
-        path: '../src/contexts/{{pascalCase name}}/{{pascalCase name}}.context.tsx',
-        templateFile: './context/context.tsx.hbs',
-      },
-      {
-        type: 'add',
-        path: '../src/contexts/{{pascalCase name}}/{{pascalCase name}}.reducer.tsx',
-        templateFile: './context/reducer.tsx.hbs',
-      },
-      {
-        type: 'add',
-        path: '../src/contexts/{{pascalCase name}}/{{pascalCase name}}.hooks.tsx',
-        templateFile: './context/hooks.tsx.hbs',
-      },
-    ],
+  actions: (data) => {
+    let path = '';
+
+    if (data.module) {
+      path = `../src/modules/${data.module}/contexts`
+    } else {
+      path = `../src/contexts`
+    }
+
+      return [
+        {
+          type: 'add',
+          path: `${path}/{{pascalCase name}}/index.ts`,
+          templateFile: './context/index.ts.hbs',
+        },
+        {
+          type: 'add',
+          path: `${path}/{{pascalCase name}}/{{pascalCase name}}.types.tsx`,
+          templateFile: './context/types.ts.hbs',
+        },
+        {
+          type: 'add',
+          path: `${path}/{{pascalCase name}}/{{pascalCase name}}.context.tsx`,
+          templateFile: './context/context.tsx.hbs',
+        },
+        {
+          type: 'add',
+          path: `${path}/{{pascalCase name}}/{{pascalCase name}}.reducer.tsx`,
+          templateFile: './context/reducer.tsx.hbs',
+        },
+        {
+          type: 'add',
+          path: `${path}/{{pascalCase name}}/{{pascalCase name}}.hooks.tsx`,
+          templateFile: './context/hooks.tsx.hbs',
+        },
+      ]
+    }
   });
 
   plop.setGenerator('component', {
@@ -43,7 +58,12 @@ module.exports = (plop) => {
       {
         type: 'input',
         name: 'name',
-        message: 'What is your component name?',
+        message: 'Component name:',
+      },
+      {
+        type: 'input',
+        name: 'module',
+        message: 'Module name (leave empty if component is common):',
       },
       {
         type: 'list',
@@ -61,33 +81,39 @@ module.exports = (plop) => {
     actions: (data) => {
       let path = '';
 
+      if (data.module) {
+        path = `../src/modules/${data.module}/components`
+      } else {
+        path = `../src/components`
+      }
+
       switch (data.type) {
         case 'atom':
-          path = '../src/components/atoms/';
+          path = `${path}/atoms/`;
           break;
         case 'molecule':
-          path = '../src/components/molecules/';
+          path = `${path}/molecules/`;
           break;
         case 'organism':
-          path = '../src/components/organisms/';
+          path = `${path}/organisms/`;
           break;
         case 'module':
-          path = '../src/components/modules/';
+          path = `${path}/modules/`;
           break;
         case 'template':
-          path = '../src/components/templates/';
+          path = `${path}/templates/`;
           break;
         case 'util':
-          path = '../src/components/utils/';
+          path = `${path}/utils/`;
           break;
         case 'layout':
-          path = '../src/components/layouts/';
+          path = `${path}/layouts/`;
           break;
         case 'page':
-          path = '../src/components/pages/';
+          path = `${path}/pages/`;
           break;
         default:
-          path = '../src/components/';
+          path = `${path}/`;
           break;
       }
 

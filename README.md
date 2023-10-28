@@ -1,35 +1,50 @@
 <p align="center">
-    <img src="https://clutchco-static.s3.amazonaws.com/s3fs-public/logos/logo-social-white_0.png">
-    <h2 align="center">Airnauts Next.js Template</h2>
+    <img src="docs/logo.png" width="100%">
 </p>
 
-### 🚀 Features
+<p align="center">
+    <strong>
+    TypeScript&nbsp;&nbsp;🪢&nbsp;&nbsp;
+    ESLint&nbsp;&nbsp;🪢&nbsp;&nbsp;
+    Prettier&nbsp;&nbsp;🪢&nbsp;&nbsp;
+    Husky&nbsp;&nbsp;🪢&nbsp;&nbsp;
+    Lint-staged&nbsp;&nbsp;🪢&nbsp;&nbsp;
+    Commitlint<br/>
+    Storybook&nbsp;&nbsp;🪢&nbsp;&nbsp;
+    Next Sitemap&nbsp;&nbsp;🪢&nbsp;&nbsp;
+    Bundle Analyzer&nbsp;&nbsp;🪢&nbsp;&nbsp;
+    Plop Generator
+    </strong>
+</p>
 
-- typescript
-- eslint (@airnauts/style-guide)
-- prettier (@airnauts/style-guide)
-- husky
-- lint-staged
-- commitlint
-- storybook
-- next-sitemap
-- bundle analyzer
+<p align="center">
+This is a template for Next.js projects.<br/>It contains all the necessary tools to start developing your application.
+</p>
 
-### ⚙️ Usage
+## Usage
 
 There are two methods to use this template in your project:
 
-- Click "Use this template" in GitHub repository page
-- Use this pnpm command:
+- **Click "Use this template" in GitHub repository page**
+- **Use this command in your terminal:**
 
-```
+```sh
 pnpm create next-app --example https://github.com/Airnauts/nextjs-template <YOUR_APP_NAME>
 ```
 
-### 🪄 Scripts
+
+## Documentation / Introduction
+
+1. <a href="../../docs/environment-variables.md">Environment Variables</a>
+2. <a href="../../docs/commit-message.md">Commit Message</a>
+3. <a href="../../docs/app-structure.md">App Structure</a>
+4. <a href="../../docs/components-generator.md">Components Generator</a>
+5. <a href="../../docs/context.md">Air Context</a>
+
+## Scripts
 
 ```sh
-# Start developing 🎉
+# Start developing
 dev
 
 # Build production app
@@ -60,22 +75,7 @@ analyze:production
 
 # Create new component
 pnpm component
+
+# Create new context
+pnpm context
 ```
-
-### 🌎 Environment Variables
-
-`./env/.env.[...]` - Environment variables stored in the `env` folder are public and can be pushed to the repository.
-
-`./.env.[...]` - Environment variables for local development. They are private and should not be pushed to the repository.
-
-### 📝 Commit Message
-
-We use <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> to standardize commit messages.
-
-### Context
-
-<a href="src/contexts/README.md">Read info about custom "Air Context"</a>
-
-### 🤓 VSCode
-
-You can add the <a href="https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits">Conventional Commits</a> plugin to your VSCode and make life easier!

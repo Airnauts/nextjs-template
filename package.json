@@ -30,12 +30,16 @@
   "prettier": "@airnauts/style-guide/prettier",
   "dependencies": {
     "@storybook/react": "^7.0.5",
-    "next": "^13.4.3",
+    "next": "^14.0.0",
     "next-sitemap": "^4.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.32.0"
   },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "packageManager": "pnpm@8.9.2",
   "devDependencies": {
     "@airnauts/style-guide": "^1.6.1",
     "@commitlint/cli": "^17.4.4",
@@ -78,6 +82,9 @@
     ],
     "**/*.scss": [
       "stylelint **/*.scss --fix"
+    ],
+    "**/*.css": [
+      "stylelint **/*.css --fix"
     ]
   }
 }
