@@ -73,9 +73,7 @@ start:production
 preview:production
 analyze:production
 
-# Create new component
-pnpm component
+# Create new component or context
+pnpm generate
 
-# Create new context
-pnpm context
 ```

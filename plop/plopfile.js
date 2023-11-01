@@ -1,4 +1,4 @@
-module.exports = (plop) => {
+module.exports = function Plopfile(plop) {
   plop.setGenerator('context', {
     description: 'Create a context',
     prompts: [
@@ -13,14 +13,14 @@ module.exports = (plop) => {
         message: 'Module name (leave empty if context is common)',
       },
     ],
-  actions: (data) => {
-    let path = '';
+    actions: (data) => {
+      let path = '';
 
-    if (data.module) {
-      path = `../src/modules/${data.module}/contexts`
-    } else {
-      path = `../src/contexts`
-    }
+      if (data && data.module) {
+        path = `../src/modules/${data.module}/contexts`;
+      } else {
+        path = `../src/contexts`;
+      }
 
       return [
         {
@@ -48,8 +48,8 @@ module.exports = (plop) => {
           path: `${path}/{{pascalCase name}}/{{pascalCase name}}.hooks.tsx`,
           templateFile: './context/hooks.tsx.hbs',
         },
-      ]
-    }
+      ];
+    },
   });
 
   plop.setGenerator('component', {
@@ -81,13 +81,13 @@ module.exports = (plop) => {
     actions: (data) => {
       let path = '';
 
-      if (data.module) {
-        path = `../src/modules/${data.module}/components`
+      if (data && data.module) {
+        path = `../src/modules/${data.module}/components`;
       } else {
-        path = `../src/components`
+        path = `../src/components`;
       }
 
-      switch (data.type) {
+      switch (data?.type) {
         case 'atom':
           path = `${path}/atoms/`;
           break;
@@ -117,28 +117,28 @@ module.exports = (plop) => {
           break;
       }
 
-      let actions = [
+      const actions = [
         {
           type: 'add',
-          path: path + '{{pascalCase name}}/{{pascalCase name}}.tsx',
+          path: `${path}{{pascalCase name}}/{{pascalCase name}}.tsx`,
           templateFile: `./component/component.tsx.hbs`,
         },
         {
           type: 'add',
-          path: path + '{{pascalCase name}}/index.ts',
+          path: `${path}{{pascalCase name}}/index.ts`,
           templateFile: `./component/index.ts.hbs`,
         },
         {
           type: 'add',
-          path: path + '{{pascalCase name}}/{{pascalCase name}}.types.ts',
+          path: `${path}{{pascalCase name}}/{{pascalCase name}}.types.ts`,
           templateFile: `./component/types.ts.hbs`,
         },
       ];
 
-      if (data.storybook) {
+      if (data && data.storybook) {
         actions.push({
           type: 'add',
-          path: path + '{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
+          path: `${path}{{pascalCase name}}/{{pascalCase name}}.stories.tsx`,
           templateFile: './component/stories.tsx.hbs',
         });
       }
