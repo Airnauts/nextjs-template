@@ -6,14 +6,10 @@ const buildEnvTypeFile = require('./buildEnvTypeFile');
 function getAppEnvs() {
   const projectDir = process.cwd();
 
-  let APP_ENV = process.env.APP_ENV;
+  let APP_ENV = process.env.APP_ENV || process.env.NODE_ENV;
 
   if (!APP_ENV) {
-    console.warn('\x1b[33m%s\x1b[0m', '⚙️ APP_ENV is not set. Using production');
-
-    // We use production as default because it will be used
-    // by e.g. Vercel and Netlify when building the app via `npm run build`
-    APP_ENV = 'production';
+    throw new Error('APP_ENV is undefined');
   }
 
   const envFilePath = path.join(projectDir, 'env', `.env.${APP_ENV}`);
