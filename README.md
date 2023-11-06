@@ -35,11 +35,11 @@ pnpm create next-app --example https://github.com/Airnauts/nextjs-template <YOUR
 
 ## Documentation / Introduction
 
-1. <a href="../../docs/environment-variables.md">Environment Variables</a>
-2. <a href="../../docs/commit-message.md">Commit Message</a>
-3. <a href="../../docs/app-structure.md">App Structure</a>
-4. <a href="../../docs/components-generator.md">Components Generator</a>
-5. <a href="../../docs/context.md">Air Context</a>
+1. <a href="../../blob/master/docs/environment-variables.md">Environment Variables</a>
+2. <a href="../../blob/master/docs/commit-message.md">Commit Message</a>
+3. <a href="../../blob/master/docs/app-structure.md">App Structure</a>
+4. <a href="../../blob/master/docs/components-generator.md">Components Generator</a>
+5. <a href="../../blob/master/docs/context.md">Air Context</a>
 
 ## Scripts
 
