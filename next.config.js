@@ -1,17 +1,16 @@
-const getAppEnvs = require('./scripts/getAppEnvs');
-
-const envs = getAppEnvs();
+const withAppEnvs = require('./scripts/withAppEnvs');
+const withSvgLoader = require('./scripts/withSvgLoader');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  env: envs,
+let nextConfig = withSvgLoader(withAppEnvs(withBundleAnalyzer({})));
+
+nextConfig = {
   compiler: {
     removeConsole: process.env.APP_ENV === 'production',
   },
 };
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
-
-module.exports = withBundleAnalyzer(nextConfig);
+module.exports = nextConfig;

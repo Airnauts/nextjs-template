@@ -27,6 +27,7 @@ yarn-error.log*
 
 # local env files
 /.env*
+environment.d.ts
 
 # local env files (commit template to git)
 !/.env.template
