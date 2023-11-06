@@ -5,10 +5,12 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+let nextConfig = withSvgLoader(withAppEnvs(withBundleAnalyzer({})));
+
+nextConfig = {
   compiler: {
     removeConsole: process.env.APP_ENV === 'production',
   },
 };
 
-module.exports = withSvgLoader(withAppEnvs(withBundleAnalyzer(nextConfig)));
+module.exports = nextConfig;
