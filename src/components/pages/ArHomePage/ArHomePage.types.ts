@@ -1,1 +1,1 @@
-export type ArHomePageProps = { }
+export type ArHomePageProps = {};
