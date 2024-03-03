@@ -1,10 +1,7 @@
 'use client';
 
 import { createContext, useMemo, useReducer } from 'react';
-import {
-  ArAppContextActionsType,
-  ArAppContextStateType,
-} from './ArAppContext.types';
+import { ArAppContextActionsType, ArAppContextStateType } from './ArAppContext.types';
 import { arAppContextReducer } from './ArAppContext.reducer';
 
 /**
@@ -14,12 +11,8 @@ import { arAppContextReducer } from './ArAppContext.reducer';
  *
  * See: https://kentcdodds.com/blog/how-to-optimize-your-context-value
  */
-export const ArAppContextState = createContext<ArAppContextStateType>(
-  {} as ArAppContextStateType
-);
-export const ArAppContextActions = createContext<ArAppContextActionsType>(
-  {} as ArAppContextActionsType
-);
+export const ArAppContextState = createContext<ArAppContextStateType>({} as ArAppContextStateType);
+export const ArAppContextActions = createContext<ArAppContextActionsType>({} as ArAppContextActionsType);
 
 /**
  * Initial state
@@ -89,9 +82,7 @@ export function ArAppContextProvider({
    */
   return (
     <ArAppContextState.Provider value={state}>
-      <ArAppContextActions.Provider value={actionsValue}>
-        {children}
-      </ArAppContextActions.Provider>
+      <ArAppContextActions.Provider value={actionsValue}>{children}</ArAppContextActions.Provider>
     </ArAppContextState.Provider>
   );
 }

@@ -1,3 +1,3 @@
-import React from 'react';
-
-export type ArMainLayoutProps = React.PropsWithChildren<{}>;
+export type ArMainLayoutProps = {
+  children: React.ReactNode;
+};

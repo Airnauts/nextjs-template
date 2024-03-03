@@ -77,5 +77,6 @@
     "coverage": true,
     "test-results": true,
     ".next": true
-  }
+  },
+  "cSpell.words": ["uuidv"]
 }

@@ -10,6 +10,4 @@ export type ArAppContextActionsType = {
   customAction: (payload: number) => void;
 };
 
-export type ArAppContextAction =
-  | ArContextAction<'increment'>
-  | ArContextActionWithPayload<'set', number>;
+export type ArAppContextAction = ArContextAction<'increment'> | ArContextActionWithPayload<'set', number>;

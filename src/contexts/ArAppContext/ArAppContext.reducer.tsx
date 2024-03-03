@@ -1,12 +1,6 @@
-import {
-  ArAppContextAction,
-  ArAppContextStateType,
-} from './ArAppContext.types';
+import { ArAppContextAction, ArAppContextStateType } from './ArAppContext.types';
 
-export function arAppContextReducer(
-  state: ArAppContextStateType,
-  action: ArAppContextAction
-) {
+export function arAppContextReducer(state: ArAppContextStateType, action: ArAppContextAction) {
   switch (action.type) {
     case 'increment':
       return { count: state.count + 1 };

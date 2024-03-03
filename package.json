@@ -34,7 +34,8 @@
     "plop": "^4.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sharp": "^0.32.6"
+    "sharp": "^0.32.6",
+    "uuid": "^9.0.1"
   },
   "engines": {
     "node": ">=18.17.0"
@@ -58,6 +59,9 @@
     "@types/node": "^18.19.21",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
+    "@types/uuid": "^9.0.8",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.1.1",
@@ -71,7 +75,8 @@
     "storybook": "^6.5.16",
     "storybook-css-modules": "^1.0.8",
     "stylelint": "^15.11.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^7.1.0"
   },
   "lint-staged": {
     "**/*.{js,ts,tsx}": [
