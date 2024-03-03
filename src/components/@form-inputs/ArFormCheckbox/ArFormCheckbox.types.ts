@@ -1,15 +1,16 @@
 export enum ArFormCheckboxVariant {
+  Pure = 'pure',
   Default = 'default',
-  Outlined = 'outlined',
 }
 
-type DefaultInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   type?: 'checkbox' | 'radio';
+  variant?: ArFormCheckboxVariant;
 };
 
 // Variants
 
-export type ArFormCheckboxOutlinedProps = DefaultInputProps & {
+export type ArFormCheckboxDefaultProps = CheckboxProps & {
   label: string;
   borderWidth: number;
   id?: string;
@@ -18,8 +19,8 @@ export type ArFormCheckboxOutlinedProps = DefaultInputProps & {
 // Props
 export type ArFormCheckboxProps =
   | ({
-      variant?: ArFormCheckboxVariant.Default;
-    } & DefaultInputProps)
+      variant: ArFormCheckboxVariant.Pure;
+    } & CheckboxProps)
   | ({
-      variant: ArFormCheckboxVariant.Outlined;
-    } & ArFormCheckboxOutlinedProps);
+      variant?: ArFormCheckboxVariant.Default;
+    } & ArFormCheckboxDefaultProps);

@@ -7,7 +7,7 @@ export default {
 } as Meta<typeof ArFormTextInput>;
 
 function Template() {
-  return <ArFormTextInput />;
+  return <ArFormTextInput borderWidth={2} />;
 }
 
 export const Default = Template.bind({});

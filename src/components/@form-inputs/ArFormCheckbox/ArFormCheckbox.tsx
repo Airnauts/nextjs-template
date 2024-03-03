@@ -1,26 +1,25 @@
 import React from 'react';
 import { ArFormCheckboxProps, ArFormCheckboxVariant } from './ArFormCheckbox.types';
-import { ArFormCheckboxOutlined } from './variants/ArFormCheckboxOutlined';
+import { ArFormCheckboxDefault } from './variants/ArFormCheckboxDefault';
 
 export function ArFormCheckbox(props: ArFormCheckboxProps) {
   const type = props.type || 'checkbox';
 
   switch (props.variant) {
-    case ArFormCheckboxVariant.Outlined:
-      return (
-        <ArFormCheckboxOutlined
-          {...props}
-          type={type}
-        />
-      );
-    case ArFormCheckboxVariant.Default:
+    case ArFormCheckboxVariant.Pure:
       return (
         <input
           {...props}
           type={type}
         />
       );
+    case ArFormCheckboxVariant.Default:
     default:
-      break;
+      return (
+        <ArFormCheckboxDefault
+          {...props}
+          type={type}
+        />
+      );
   }
 }

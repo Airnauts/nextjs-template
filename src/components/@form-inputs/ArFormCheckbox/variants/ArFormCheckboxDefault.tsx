@@ -1,12 +1,12 @@
-import { ArFormCheckboxOutlinedProps } from '..';
+import { ArFormCheckboxDefaultProps } from '..';
 import { v4 as uuidv4 } from 'uuid';
 
-export function ArFormCheckboxOutlined({
+export function ArFormCheckboxDefault({
   id = uuidv4(),
   label,
   borderWidth,
   ...inputProps
-}: ArFormCheckboxOutlinedProps) {
+}: ArFormCheckboxDefaultProps) {
   return (
     <label htmlFor={id}>
       <input

@@ -1,6 +1,6 @@
-import { ArButtonOutlinedProps } from '..';
+import { ArButtonDefaultProps } from '..';
 
-export function ArButtonOutlined({ children, borderWith, variant, ...buttonProps }: ArButtonOutlinedProps) {
+export function ArButtonDefault({ children, borderWith, variant, ...buttonProps }: ArButtonDefaultProps) {
   return (
     <button
       {...buttonProps}

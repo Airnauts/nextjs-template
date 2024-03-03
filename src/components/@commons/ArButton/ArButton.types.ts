@@ -1,22 +1,22 @@
 export enum ArButtonVariant {
+  Pure = 'Pure',
   Default = 'default',
-  Outlined = 'outlined',
 }
 
-type DefaultProps = React.HTMLProps<HTMLButtonElement> & {
+type ButtonProps = React.HTMLProps<HTMLButtonElement> & {
   type?: 'button' | 'submit' | 'reset' | undefined;
   variant?: ArButtonVariant;
 };
 
 // Variants
-export type ArButtonOutlinedProps = DefaultProps & {
+export type ArButtonDefaultProps = ButtonProps & {
   borderWith: number;
 };
 
 export type ArButtonProps =
-  | (DefaultProps & {
-      variant?: ArButtonVariant.Default;
+  | (ButtonProps & {
+      variant: ArButtonVariant.Pure;
     })
-  | (ArButtonOutlinedProps & {
-      variant: ArButtonVariant.Outlined;
+  | (ArButtonDefaultProps & {
+      variant?: ArButtonVariant.Default;
     });

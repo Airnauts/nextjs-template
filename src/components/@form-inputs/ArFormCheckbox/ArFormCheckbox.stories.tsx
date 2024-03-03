@@ -7,7 +7,12 @@ export default {
 } as Meta<typeof ArFormCheckbox>;
 
 function Template() {
-  return <ArFormCheckbox />;
+  return (
+    <ArFormCheckbox
+      label='Label'
+      borderWidth={2}
+    />
+  );
 }
 
 export const Default = Template.bind({});

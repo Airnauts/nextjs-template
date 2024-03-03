@@ -1,21 +1,23 @@
 export enum ArFormTextInputVariant {
+  Pure = 'pure',
   Default = 'default',
-  Outlined = 'outlined',
 }
 
 // Default Props
-type DefaultInputProps = React.InputHTMLAttributes<HTMLInputElement>;
+type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  variant?: ArFormTextInputVariant;
+};
 
 // Variants
-export type ArFormTextInputOutlinedProps = DefaultInputProps & {
+export type ArFormTextInputDefaultProps = InputProps & {
   borderWidth: number;
 };
 
 // Props
 export type ArFormTextInputProps =
-  | (DefaultInputProps & {
-      variant?: ArFormTextInputVariant.Default;
+  | (InputProps & {
+      variant: ArFormTextInputVariant.Pure;
     })
-  | (ArFormTextInputOutlinedProps & {
-      variant: ArFormTextInputVariant.Outlined;
+  | (ArFormTextInputDefaultProps & {
+      variant?: ArFormTextInputVariant.Default;
     });
