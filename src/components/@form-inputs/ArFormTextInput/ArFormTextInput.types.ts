@@ -1,6 +1,6 @@
 export enum ArFormTextInputVariant {
-  Pure = 'pure',
   Default = 'default',
+  Primary = 'Primary',
 }
 
 // Default Props
@@ -9,15 +9,15 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 };
 
 // Variants
-export type ArFormTextInputDefaultProps = InputProps & {
+export type ArFormTextInputPrimaryProps = InputProps & {
   borderWidth: number;
 };
 
 // Props
 export type ArFormTextInputProps =
   | (InputProps & {
-      variant: ArFormTextInputVariant.Pure;
+      variant: ArFormTextInputVariant.Default;
     })
-  | (ArFormTextInputDefaultProps & {
-      variant?: ArFormTextInputVariant.Default;
+  | (ArFormTextInputPrimaryProps & {
+      variant?: ArFormTextInputVariant.Primary;
     });

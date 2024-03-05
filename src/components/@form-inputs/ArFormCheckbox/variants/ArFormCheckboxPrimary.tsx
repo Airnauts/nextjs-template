@@ -1,12 +1,12 @@
-import { ArFormCheckboxDefaultProps } from '..';
+import { ArFormCheckboxPrimaryProps } from '..';
 import { v4 as uuidv4 } from 'uuid';
 
-export function ArFormCheckboxDefault({
+export function ArFormCheckboxPrimary({
   id = uuidv4(),
   label,
   borderWidth,
   ...inputProps
-}: ArFormCheckboxDefaultProps) {
+}: ArFormCheckboxPrimaryProps) {
   return (
     <label htmlFor={id}>
       <input

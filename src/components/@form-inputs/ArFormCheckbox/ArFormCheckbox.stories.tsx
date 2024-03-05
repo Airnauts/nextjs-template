@@ -1,5 +1,6 @@
 import { Meta } from '@storybook/react';
 import { ArFormCheckbox } from './ArFormCheckbox';
+import { ArFormCheckboxVariant } from '.';
 
 export default {
   title: 'FormInput/ArFormCheckbox',
@@ -9,6 +10,7 @@ export default {
 function Template() {
   return (
     <ArFormCheckbox
+      variant={ArFormCheckboxVariant.Primary}
       label='Label'
       borderWidth={2}
     />

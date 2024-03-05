@@ -14,16 +14,16 @@ export function ArHomePage(props: ArHomePageProps) {
   return (
     <div>
       <ArFormTextInput
-        variant={ArFormTextInputVariant.Default}
+        variant={ArFormTextInputVariant.Primary}
         borderWidth={2}
       />
       <ArFormCheckbox
-        variant={ArFormCheckboxVariant.Default}
+        variant={ArFormCheckboxVariant.Primary}
         label='Check me out!'
         borderWidth={2}
       />
       <ArButton
-        variant={ArButtonVariant.Default}
+        variant={ArButtonVariant.Primary}
         borderWith={2}
       >
         Hello World

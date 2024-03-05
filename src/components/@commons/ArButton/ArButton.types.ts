@@ -1,6 +1,6 @@
 export enum ArButtonVariant {
-  Pure = 'Pure',
-  Default = 'default',
+  Default = 'Default',
+  Primary = 'primary',
 }
 
 type ButtonProps = React.HTMLProps<HTMLButtonElement> & {
@@ -9,14 +9,14 @@ type ButtonProps = React.HTMLProps<HTMLButtonElement> & {
 };
 
 // Variants
-export type ArButtonDefaultProps = ButtonProps & {
+export type ArButtonPrimaryProps = ButtonProps & {
   borderWith: number;
 };
 
 export type ArButtonProps =
   | (ButtonProps & {
-      variant: ArButtonVariant.Pure;
+      variant: ArButtonVariant.Default;
     })
-  | (ArButtonDefaultProps & {
-      variant?: ArButtonVariant.Default;
+  | (ArButtonPrimaryProps & {
+      variant?: ArButtonVariant.Primary;
     });

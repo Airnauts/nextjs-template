@@ -1,13 +1,13 @@
 import React from 'react';
 import { ArFormTextInputProps, ArFormTextInputVariant } from './ArFormTextInput.types';
-import { ArFormTextInputDefault } from './variants/ArFormTextInputDefault';
+import { ArFormTextInputPrimary } from './variants/ArFormTextInputPrimary';
 
 export function ArFormTextInput(props: ArFormTextInputProps) {
   switch (props.variant) {
-    case ArFormTextInputVariant.Pure:
-      return <input {...props} />;
+    case ArFormTextInputVariant.Primary:
+      return <ArFormTextInputPrimary {...props} />;
     case ArFormTextInputVariant.Default:
     default:
-      return <ArFormTextInputDefault {...props} />;
+      return <input {...props} />;
   }
 }

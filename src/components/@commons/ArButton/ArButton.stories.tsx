@@ -10,7 +10,7 @@ export default {
 function Template() {
   return (
     <ArButton
-      variant={ArButtonVariant.Default}
+      variant={ArButtonVariant.Primary}
       borderWith={2}
     >
       Button

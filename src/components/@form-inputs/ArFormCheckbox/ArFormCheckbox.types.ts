@@ -1,6 +1,6 @@
 export enum ArFormCheckboxVariant {
-  Pure = 'pure',
   Default = 'default',
+  Primary = 'Primary',
 }
 
 type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
@@ -10,7 +10,7 @@ type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
 
 // Variants
 
-export type ArFormCheckboxDefaultProps = CheckboxProps & {
+export type ArFormCheckboxPrimaryProps = CheckboxProps & {
   label: string;
   borderWidth: number;
   id?: string;
@@ -19,8 +19,8 @@ export type ArFormCheckboxDefaultProps = CheckboxProps & {
 // Props
 export type ArFormCheckboxProps =
   | ({
-      variant: ArFormCheckboxVariant.Pure;
+      variant: ArFormCheckboxVariant.Default;
     } & CheckboxProps)
   | ({
-      variant?: ArFormCheckboxVariant.Default;
-    } & ArFormCheckboxDefaultProps);
+      variant?: ArFormCheckboxVariant.Primary;
+    } & ArFormCheckboxPrimaryProps);
