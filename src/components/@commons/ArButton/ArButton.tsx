@@ -3,12 +3,24 @@ import { ArButtonProps, ArButtonVariant } from './ArButton.types';
 import { ArButtonPrimary } from './variants/ArButtonPrimary';
 
 export function ArButton(props: ArButtonProps) {
-  props.type = props.type || 'button';
+  const type = props.type || 'button';
   switch (props.variant) {
     case ArButtonVariant.Primary:
-      return <ArButtonPrimary {...props} />;
+      return (
+        <ArButtonPrimary
+          {...props}
+          type={type}
+        />
+      );
     case ArButtonVariant.Default:
     default:
-      return <button {...props}>{props.children}</button>;
+      return (
+        <button
+          {...props}
+          type={type}
+        >
+          {props.children}
+        </button>
+      );
   }
 }

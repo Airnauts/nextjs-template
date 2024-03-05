@@ -3,11 +3,22 @@ import { ArFormTextInputProps, ArFormTextInputVariant } from './ArFormTextInput.
 import { ArFormTextInputPrimary } from './variants/ArFormTextInputPrimary';
 
 export function ArFormTextInput(props: ArFormTextInputProps) {
+  const type = props.type || 'text';
   switch (props.variant) {
     case ArFormTextInputVariant.Primary:
-      return <ArFormTextInputPrimary {...props} />;
+      return (
+        <ArFormTextInputPrimary
+          {...props}
+          type={type}
+        />
+      );
     case ArFormTextInputVariant.Default:
     default:
-      return <input {...props} />;
+      return (
+        <input
+          {...props}
+          type={type}
+        />
+      );
   }
 }

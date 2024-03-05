@@ -12,7 +12,6 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@stylistic/jsx', '@typescript-eslint', 'prettier'],
   extends: ['next/core-web-vitals', 'eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
-  include: ['src/**/*'],
   parserOptions: {
     project,
     ecmaVersion: 'latest',
