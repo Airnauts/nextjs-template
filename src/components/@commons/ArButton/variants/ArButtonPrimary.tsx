@@ -1,6 +1,6 @@
 import { ArButtonPrimaryProps } from '..';
 
-export function ArButtonPrimary({ children, borderWith, variant, ...buttonProps }: ArButtonPrimaryProps) {
+export function ArButtonPrimary({ children, borderWith, ...buttonProps }: ArButtonPrimaryProps) {
   return (
     <button
       {...buttonProps}

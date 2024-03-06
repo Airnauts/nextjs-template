@@ -7,11 +7,13 @@ const rules = {
   'react/function-component-definition': [2, { namedComponents: 'function-declaration' }],
 };
 
+/** @type {import('eslint').ESLint.ConfigData} */
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
   plugins: ['@stylistic/jsx', '@typescript-eslint', 'prettier'],
   extends: ['next/core-web-vitals', 'eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  ignorePatterns: ['node_modules', 'out', 'dist', 'build', 'coverage', '*.js'],
   parserOptions: {
     project,
     ecmaVersion: 'latest',
