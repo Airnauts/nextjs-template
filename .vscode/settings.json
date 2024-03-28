@@ -78,5 +78,5 @@
     "test-results": true,
     ".next": true
   },
-  "cSpell.words": ["uuidv"]
+  "cSpell.words": ["svgr", "tailwindcss", "uuidv"]
 }
