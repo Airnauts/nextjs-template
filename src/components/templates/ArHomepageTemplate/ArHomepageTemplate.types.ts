@@ -1,3 +1,3 @@
-import React from 'react';
-
-export type ArHomepageTemplateProps = React.PropsWithChildren<{}>;
+export type ArHomepageTemplateProps = {
+  children: React.ReactNode;
+};

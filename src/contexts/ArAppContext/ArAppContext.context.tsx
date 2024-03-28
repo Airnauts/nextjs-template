@@ -71,7 +71,7 @@ export function ArAppContextProvider({
       set: (payload: number) => dispatch({ type: 'set', payload }),
       customAction,
     }),
-    [],
+    []
   );
 
   /**

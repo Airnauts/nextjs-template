@@ -24,8 +24,8 @@ export const ArMainLayoutMetadata: Metadata = {
 
 export function ArMainLayout({ children }: ArMainLayoutProps) {
   return (
-    <html lang="en">
-      <body>
+    <html lang='en'>
+      <body className='text-red text-sm md:text-black'>
         <ArAppContextProvider
           initialState={{
             count: 0,

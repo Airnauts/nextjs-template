@@ -16,7 +16,18 @@ module.exports = function (plop) {
         type: 'list',
         name: 'type',
         message: 'Select type of the component',
-        choices: ['atom', 'molecule', 'organism', 'module', 'util', 'template', 'layout', 'page'],
+        choices: [
+          '@commons',
+          'atom',
+          'molecule',
+          'organism',
+          'util',
+          'template',
+          'layout',
+          'page',
+          '@form-input',
+          'module',
+        ],
       },
       {
         type: 'confirm',
@@ -58,6 +69,12 @@ module.exports = function (plop) {
           break;
         case 'page':
           path = `${path}/pages/`;
+          break;
+        case 'form-input':
+          path = `${path}/@form-inputs/`;
+          break;
+        case '@commons':
+          path = `${path}/@commons/`;
           break;
         default:
           path = `${path}/`;

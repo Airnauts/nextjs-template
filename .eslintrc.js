@@ -1,21 +1,31 @@
-const { resolve } = require('path');
-
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const resolve = require('path').resolve;
 const project = resolve(__dirname, 'tsconfig.json');
+const rules = {
+  'prettier/prettier': 'warn',
+  '@typescript-eslint/no-unused-vars': 'error',
+  'react/function-component-definition': [2, { namedComponents: 'function-declaration' }],
+};
 
+/** @type {import('eslint').ESLint.ConfigData} */
 module.exports = {
   root: true,
-  extends: [
-    'plugin:@next/next/recommended',
-    require.resolve('@airnauts/style-guide/eslint/typescript'),
-    require.resolve('@airnauts/style-guide/eslint/react-typescript'),
-  ],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@stylistic/jsx', '@typescript-eslint', 'prettier'],
+  extends: ['next/core-web-vitals', 'eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  ignorePatterns: ['node_modules', 'out', 'dist', 'build', 'coverage', '*.js'],
   parserOptions: {
     project,
-  },
-  parserOptions: {
     ecmaVersion: 'latest',
+    tsconfigRootDir: __dirname,
+  },
+  settings: {
+    next: {
+      rootDir: 'src',
+    },
   },
   env: {
     es6: true,
   },
+  rules,
 };
